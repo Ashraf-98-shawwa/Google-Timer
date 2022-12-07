@@ -4,7 +4,18 @@ const seconds = document.getElementById("seconds")
 const start = document.getElementById("start")
 const reset = document.getElementById("reset")
 const finish = document.getElementById("finish")
+const setTime = document.getElementById("setTime")
 
+
+setTime.onclick = _ => {
+   let HOURS = prompt("How many hours ? ")
+    hours.innerText = HOURS;
+    let MINUTES = prompt("How many minutes ?")
+    minutes.innerText = MINUTES;
+    let SECONDS = prompt("How many seconds ?")
+    seconds.innerText = SECONDS;
+
+}
 
 start.onclick = _ => {
     if (start.classList.contains("start")) {
@@ -27,6 +38,7 @@ reset.onclick = _ => {
 
     clearInterval(myinterval);
     finish.style.display = "none"  
+    hours.innerText = "00";
     minutes.innerText = "5";
     seconds.innerText = "00";
     start.classList.remove("pause");
