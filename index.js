@@ -1,3 +1,4 @@
+const hours = document.getElementById("hours")
 const minutes = document.getElementById("minutes")
 const seconds = document.getElementById("seconds")
 const start = document.getElementById("start")
@@ -23,7 +24,9 @@ start.onclick = _ => {
 }
 
 reset.onclick = _ => {
+
     clearInterval(myinterval);
+    finish.style.display = "none"  
     minutes.innerText = "5";
     seconds.innerText = "00";
     start.classList.remove("pause");
@@ -33,19 +36,21 @@ reset.onclick = _ => {
 
 
 function decrement() {
+
+    finish.style.display = "none"  
+
     if (seconds.innerText > 0) {
-        if (seconds.innerText < 11) {
-            value = seconds.innerText - 1
-            seconds.innerText = "0" + value
-        } else {
-            seconds.innerText -= 1
-        }
+        seconds.innerText -= 1
     } else if (seconds.innerText == 0) {
         if (minutes.innerText != 0) {
             minutes.innerText -= 1
             seconds.innerText = 59
+        } else if (hours.innerText != 0) {
+            hours.innerText -= 1
+            minutes.innerText = 59
+            seconds.innerText = 59
         } else {
-            finish.style.display = "block"
+            finish.style.display = "block"  
         }
     }
 }

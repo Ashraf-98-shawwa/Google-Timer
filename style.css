@@ -132,10 +132,11 @@ main .container .body {
 
 }
 
-main .container .body p {
+main .container .body .counter {
     font-size: 20px;
     border-bottom: 1px solid #3c4043;
     padding-bottom: 25px;
+    display: flex;
 }
 
 main .container .body h2 {
@@ -144,11 +145,13 @@ main .container .body h2 {
     display: none;
 }
 
-main .container .body p span {
+main .container .body div span {
     font-size: 50px;
 }
 
-main .container .body p span#seconds {
+main .container .body div span#seconds,
+main .container .body div span#minutes
+ {
     margin-left: 15px;
 }
 
